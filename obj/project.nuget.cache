@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "VVGY7Xwzk1xqc7eir9P5PPE5I6+kyWDcW9+aCihLgyXtbeNRpSqy+U9VUe3L6XuOI0lk6+C7LxTdc72VpMIKhg==",
+  "success": true,
+  "projectFilePath": "/home/joskeiner/Documentos/Practicas_Csharp/APIBiblioteca/APIBiblioteca.csproj",
+  "expectedPackageFiles": [
+    "/home/joskeiner/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/joskeiner/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/joskeiner/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/home/joskeiner/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/home/joskeiner/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/home/joskeiner/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
