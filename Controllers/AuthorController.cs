@@ -49,5 +49,38 @@ namespace APIBiblioteca.Controllers
       var dto = _mapper.Map<AuthorCreateDTO>(entity);
       return new CreatedAtRouteResult("GetAuthor", new { id = author.Id }, dto);
     }
+    [HttpPut("{id}")]
+    public async Task<ActionResult> Update(int id, AuthorCreateDTO entity)
+    {
+      var searchAuthor = await _repository.GetOne(id);
+      if (searchAuthor == null)
+      {
+        return NotFound();
+      }
+
+      _mapper.Map(entity, searchAuthor);
+      var result = await _repository.Update(searchAuthor);
+      if (result)
+      {
+        return NoContent();
+      }
+      return BadRequest();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(int id)
+    {
+      var searchAuthor = await _repository.GetOne(id);
+      if (searchAuthor == null)
+      {
+        return NotFound();
+      }
+      var result = await _repository.Delete(id);
+      if (result)
+      {
+        return NoContent();
+      }
+      return BadRequest();
+    }
   }
 }
