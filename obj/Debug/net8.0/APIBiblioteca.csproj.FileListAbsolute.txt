@@ -103,3 +103,5 @@
 /home/joskeiner/Documentos/Practicas_Csharp/APIBiblioteca/obj/Debug/net8.0/APIBiblioteca.pdb
 /home/joskeiner/Documentos/Practicas_Csharp/APIBiblioteca/obj/Debug/net8.0/APIBiblioteca.genruntimeconfig.cache
 /home/joskeiner/Documentos/Practicas_Csharp/APIBiblioteca/obj/Debug/net8.0/ref/APIBiblioteca.dll
+/home/joskeiner/Documentos/Practicas_Csharp/APIBiblioteca/bin/Debug/net8.0/AutoMapper.dll
+/home/joskeiner/Documentos/Practicas_Csharp/APIBiblioteca/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

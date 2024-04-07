@@ -2,6 +2,7 @@ using APIBiblioteca.DAL.DataContext;
 using Microsoft.EntityFrameworkCore;
 using APIBiblioteca.DAL.Implement;
 using APIBiblioteca.DAL.Interface;
+using APIBiblioteca.DTO;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,9 +13,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("connectSql")));
-var app = builder.Build();
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddAutoMapper(typeof(AuthorCreateDTO));
 
+
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -22,7 +25,7 @@ if (app.Environment.IsDevelopment())
   app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
