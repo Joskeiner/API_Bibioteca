@@ -1,8 +1,9 @@
 namespace APIBiblioteca.DTO
 {
-  public class CommmentListDTO
+  public class CommentListDTO
   {
-    public string? content { get; set; }
-    public bool Recommend { get; set; }
+
+       public string? Content { get; set; }
+        public bool Recommend { get; set; }
   }
 }
