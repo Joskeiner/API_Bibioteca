@@ -28,7 +28,7 @@ dotnet --version
 2.Run docker-compose for postgres
 
 ```bash
-dotnet --version
+docker-compose up -d ; docker-compose logs -f
 ```
 
 3.Run dotnet mode development
