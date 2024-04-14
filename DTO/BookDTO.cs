@@ -8,7 +8,7 @@ namespace APIBiblioteca.DTO
 
     public bool ToOffer { get; set; }
 
-    public DateTime PublicationDate { get; set; }
+    public string PublicationDate { get; set; }
 
 
     public string? NameAuthor { get; set; }
@@ -16,6 +16,6 @@ namespace APIBiblioteca.DTO
 
     public string? NameGenres { get; set; }
 
-    public HashSet<CommmentListDTO> Comentarios { get; set; } = new HashSet<CommmentListDTO>();
+    public HashSet<CommentListDTO>  Comments{ get; set; } = new HashSet<CommentListDTO>();
   }
 }
