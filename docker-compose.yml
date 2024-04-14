@@ -2,18 +2,30 @@ version: "3.7"
 services:
   postgres:
     container_name: postgres
-    image: postgres
+    image: postgres:latest
     restart: always
     networks:
       - database
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_PASSWORD: "123456"
       POSTGRES_DB: "biblioteca"
     volumes:
       - postgres:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+  app:
+    container_name: app
+    build: ./
+    ports:
+      - "5000:5000"
+    networks:
+      - database
+    depends_on:
+      - postgres
+    
+    command: ["dotnet", "run"]
+
 
 networks:
   database:
