@@ -19,7 +19,7 @@ namespace APIBiblioteca.Models
 
     public Genre? Genres { get; set; }
 
-    public HashSet<Comment> Comentarios { get; set; } = new HashSet<Comment>();
+    public HashSet<Comment>  Comments { get; set; } = new HashSet<Comment>();
 
 
 

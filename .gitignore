@@ -1,0 +1,12 @@
+# folders
+bin/
+obj/
+.vscode/
+
+#files
+*.user
+*.sln
+*.config
+*.txt
+*.log
+.http

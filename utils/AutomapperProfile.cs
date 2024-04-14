@@ -21,6 +21,15 @@ namespace APIBiblioteca.utils
         .ForMember(d => d.NameAuthor, o => o.MapFrom(opt => opt.Author.Name))
         .ForMember(d => d.NameGenres, p => p.MapFrom(opt => opt.Genres.Name))
         .ForMember(d => d.PublicationDate, p => p.MapFrom(opt => opt.PublicationDate.ToString("dd/MM/yyyy")));
+      
+      CreateMap<CreateBookDTO, Book>()
+      .ForMember(d => d.Id, p => p.Ignore())
+      .ForMember(d => d.Author, p => p.Ignore())
+      .ForMember(d => d.Genres, p=> p.Ignore());
+
+      CreateMap<Comment , CommentDTO>().ReverseMap();
+      CreateMap<CommentListDTO, Comment>().ReverseMap();
     }
+  
   }
 }
