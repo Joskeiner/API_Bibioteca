@@ -12,10 +12,12 @@ namespace APIBiblioteca.Controllers
   {
     private readonly IGenericRepository<Genre> _repository;
     private readonly IMapper _mapper;
-    public GenreController(IGenericRepository<Genre> repository, IMapper mapper)
+    private readonly IGenreRepository _genreRepository;
+    public GenreController(IGenericRepository<Genre> repository, IMapper mapper, IGenreRepository genreRepository)
     {
       _repository = repository;
       _mapper = mapper;
+      _genreRepository= genreRepository;
     }
     [HttpGet]
     public async Task<ActionResult<IEnumerable<GenreDTO>>> GetAll()
@@ -35,6 +37,14 @@ namespace APIBiblioteca.Controllers
       var genreDTO = _mapper.Map<GenreDTO>(genres);
       return Ok(genreDTO);
     }
+    [HttpGet("withBooks")]
+    public async Task<ActionResult<IEnumerable<GenreDTO>>> GetAllWithBook()
+    {
+      var genreWithBooks = await _genreRepository.GetAllWithBooks();
+      var genreDto = _mapper.Map<IEnumerable<GenreDTO>>(genreWithBooks);
+      return Ok(genreDto);
+
+    }
 
     [HttpPost]
     public async Task<ActionResult<CreateGenreDTO>> Create([FromBody] CreateGenreDTO entity)
@@ -46,7 +56,7 @@ namespace APIBiblioteca.Controllers
       {
         return NotFound();
       }
-      var dto = _mapper.Map<AuthorCreateDTO>(entity);
+      var dto = _mapper.Map<CreateGenreDTO>(entity);
       return Ok(dto);
     }
     [HttpPut("{id}")]
